@@ -1,0 +1,23 @@
+.BasketCart{
+
+}
+.BasketCart .BasketBtn{
+    background:#f47723;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.BasketCart .BasketBtn:hover{
+    background:#d45d0d;
+}
+
+.BasketCart .BasketBtn a{
+    font-size: 20px;
+    color: white;
+    display: block;
+    height: 100%;
+}
+
+.BasketCart .BasketBtn a:hover{
+    text-decoration: none;
+}

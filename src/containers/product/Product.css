@@ -1,0 +1,54 @@
+.Product{
+    overflow: hidden;
+}
+
+.Product .ProductCaption{
+    color: #333;
+    padding-top: 16px;
+    border-top: 1px dotted #f47723;
+    margin-top: 41px;
+}
+
+.ProductDetails{
+    border-bottom:1px dashed #E5E5E5;
+    display: flex;
+    align-items: center;
+}
+
+.ProductDetails p{
+    margin: 0.7em 0;
+}
+
+.ProductDetails .Title{
+    font-size: 1.5em;
+    color: #666;
+}
+
+.ProductDetails .Info{
+    margin-left: 15px;
+    font-size:18px;
+    color: #777;
+}
+
+.Product .controlBtns{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.Product .controlBtns button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.Product .controlBtns .BtnDark{
+    padding: 0;
+
+}
+.Product .controlBtns .BtnDark a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    padding: 10px;
+}

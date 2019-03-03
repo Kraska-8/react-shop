@@ -88,3 +88,10 @@ export const cleanBasket = () => dispatch => {
 export const basketCheckout = products => dispatch => {
     alert(JSON.stringify(products))
 }
+
+export const searchProduct = text => dispatch => {
+    dispatch({
+        type: actionTypes.SEARCH_PRODUCT,
+        payload: text
+    })
+}

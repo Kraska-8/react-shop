@@ -5,21 +5,24 @@ import { fetchProducts, loadMoreProducts, addProductToBasket } from '../../actio
 import { getProducts } from '../../selectors';
 import { Row, Col, Image, Button } from 'react-bootstrap';
 import * as R from 'ramda';
+import classes from './Products.css';
 
 class Products extends Component {
     componentDidMount(){
         this.props.fetchProducts()
     }
+
+
     renderProduct(product,index){
         const{addProductToBasket} = this.props
         const shortDesc = `${R.take(60, product.description)}...`
         return(
-            <Col xs={12} sm={6} md={6} lg={4} className='products-list' key={index}>
+            <Col xs={12} sm={6} md={6} lg={4}  key={index}>
                 <div>
                     <Image src={product.image} alt={product.name} rounded fluid/>
                 </div>
-                <div className='caption'>
-                    <div className='caption-heading'> 
+                <div className={classes.Caption}>
+                    <div className={classes.CaptionHeading}> 
                         <h4>
                             <Link to={`/products/${product.id}`}>
                                 {product.name}
@@ -28,11 +31,11 @@ class Products extends Component {
                         <h5>{product.price} $</h5>
                     </div>
                     <p>{shortDesc}</p>
-                    <div className='itemButton'>
+                    <div className={classes.ItemButton}>
                         <Button 
                         variant='dark'
                         onClick={()=>addProductToBasket(product.id)}>Buy now!</Button>
-                        <Button  variant='outline-dark'>
+                        <Button  variant='outline-dark' className={classes.OutlineButton}>
                             <Link to={`/products/${product.id}`}>More info</Link>
                         </Button>
                     </div>
@@ -46,14 +49,14 @@ class Products extends Component {
         
         return(
             <>
-                <Row className='products'>
+                <Row className={classes.Products}>
                     {products.map((product, index) => this.renderProduct(product,index))}
                 </Row>
-                <Row>
+                <Row className={classes.LoadMoreBtnBlock}>
                     <Col md={12}>
                         <Button 
                         onClick ={loadMoreProducts}
-                        variant='dark'
+                        variant='outline-dark'
                         >Load more</Button>
                     </Col>
                 </Row>

@@ -1,0 +1,12 @@
+.Sidebar{
+    position: fixed;
+    margin-bottom: 30px;
+    width: 250px;
+}
+
+@media (max-width: 992px) {
+    .Sidebar{
+        position: relative;
+        width: 100%;
+    }  
+}

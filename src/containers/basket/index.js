@@ -5,14 +5,21 @@ import { removeProductFromBasket, cleanBasket, basketCheckout } from '../../acti
 import * as R from 'ramda';
 import { Table, Image, Row, Button, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import classes from './Basket.css'
 
 
 const Basket = ({products, totalPrice, removeProductFromBasket, cleanBasket, basketCheckout }) => {
     const isBasketEmpty = R.isEmpty(products)
     const renderTable = () =>(
         <>
-            {isBasketEmpty && <h3>Your shopping cart is empty</h3>}
-
+            {isBasketEmpty && 
+            <>
+            <h3>Your shopping cart is empty</h3>
+                <Button variant='dark' className={classes.BtnDark}>
+                    <Link to='/'>Begin shopping</Link>
+                </Button>
+            </>
+                }
             {R.not(isBasketEmpty) && 
             <>
                 <h3>Your shopping cart</h3>
@@ -39,7 +46,8 @@ const Basket = ({products, totalPrice, removeProductFromBasket, cleanBasket, bas
                                 <td>{product.count}</td>
                                 <td>
                                     <span
-                                    className='delItem'
+
+                                    className={classes.DeleteItem}
                                     onClick={()=> removeProductFromBasket(product.id)}>
                                     Delete item
                                     </span>
@@ -49,12 +57,12 @@ const Basket = ({products, totalPrice, removeProductFromBasket, cleanBasket, bas
                     </tbody>
                 </Table>
                 <Row>
-                    <Col lg={6} md={6} className='totalPrice'>
+                    <Col lg={6} md={6} className={classes.TotalPrice}>
                         <b>Total:</b> {totalPrice} $
                     </Col>
 
-                    <Col lg={6} md={6} className='btns-row'>
-                        <Button variant='dark'>
+                    <Col lg={6} md={6} className={classes.BtnsRow}>
+                        <Button variant='dark' className={classes.BtnDark}>
                             <Link to='/'>Continue shopping</Link>
                         </Button>
                         <Button variant='danger'
@@ -72,7 +80,7 @@ const Basket = ({products, totalPrice, removeProductFromBasket, cleanBasket, bas
     </>
     )
     return (
-        <div>
+        <div className={classes.Basket}>
             {renderTable()}
         </div>
     )

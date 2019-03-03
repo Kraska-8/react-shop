@@ -2,7 +2,8 @@ import * as actionTypes from '../actionTypes'; // Importing constants of action 
 import * as R from 'ramda';
 
 const initialState = {
-   ids:[]
+   ids:[],
+   search: ''
 }
 
 export default  (state = initialState,{type, payload})=>{
@@ -18,6 +19,11 @@ export default  (state = initialState,{type, payload})=>{
             return {
                 ...state,
                 ids: state.ids.concat(ids)
+            }
+        case actionTypes.SEARCH_PRODUCT:
+            return {
+                ...state,
+                search: payload
             }
         default:
             return state

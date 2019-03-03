@@ -1,0 +1,53 @@
+
+.Products {
+
+}
+
+.Products .Caption{
+    min-height:165px;
+    margin-top: 20px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.Products .Caption h4 {
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+.Products .Caption .CaptionHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Products .Caption .ItemButton{
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.OutlineButton{
+    margin-left: 15px;
+    padding: 0;
+}
+
+.OutlineButton a{
+    color: black;
+    display: block;
+    height: 100%;
+    padding: 10px;
+}
+
+.OutlineButton :hover a{
+    color: white;
+}
+
+.LoadMoreBtnBlock{
+    text-align: center;
+}
+
+.LoadMoreBtnBlock button{
+    width: 100%;
+}

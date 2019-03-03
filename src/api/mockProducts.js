@@ -51,13 +51,13 @@ export default [
       description: "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road. Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
       price: 128,
       image: "/uploads/4.jpg",
-      cpu: "1.3GHz Apple A6",
-      camera: "8mp (3264x2448)",
-      size: "124.4mm x 59.2mm x 8.97mm (4.9 x 2.33 x 0.35)",
-      weight: "132 grams (4.7 ounces) with battery",
-      display: "4.0 326 pixel density",
-      battery: "1480 mAh",
-      memory: "16GB, 32GB and RAM 1 GB"
+      Height: "37-45″",
+      Width: "24″",
+      Wheels: "12″ air / wide track slick tread",
+      Weight: "20 LBS",
+      Folded: "32.5″L x 18.5″W x 16.5″H",
+      Frame: "Aluminum",
+      StandUp: "35″L x 24″W x 37-45″H(front to back wheel)"
     },
     {
       id: "5",

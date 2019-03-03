@@ -1,0 +1,35 @@
+.Basket{
+
+}
+
+.Basket table img{
+    width: 80px;
+}
+
+.Basket .DeleteItem{
+    cursor: pointer;
+    color: #666;
+}
+.Basket .DeleteItem:hover{
+    color: black;
+}
+
+.Basket .TotalPrice{
+    font-size: 25px;
+}
+
+.Basket .BtnsRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Basket  .BtnDark{
+    padding: 0;
+}
+
+.Basket  .BtnDark a {
+    color: white;
+    display: block;
+    height: 100%;
+    padding: 10px;
+}

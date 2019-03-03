@@ -22,3 +22,5 @@ export const REMOVE_PRODUCT_FROM_BASKET = 'REMOVE_PRODUCT_FROM_BASKET';
 //Cleaning basket
 export const CLEAN_BASKET = 'CLEAN_BASKET';
 
+//Searching product
+export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';

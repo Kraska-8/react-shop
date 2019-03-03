@@ -1,0 +1,31 @@
+.Search{
+    margin: 20px 0;
+}
+
+.Search p{
+    margin-bottom: 5px;
+}
+
+
+.SearchForm form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.SearchForm form input{
+    padding-left: 10px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #c7c7c7;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #c7c7c7;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #c7c7c7;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #c7c7c7;
+  }

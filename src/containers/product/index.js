@@ -5,6 +5,7 @@ import { getProductById } from '../../selectors';
 import { Row, Col, Image, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import * as R from 'ramda';
+import classes from './Product.css';
 
 class Product extends Component {
     componentDidMount(){
@@ -27,11 +28,11 @@ class Product extends Component {
         )(product)
 
         return columnFields.map(([key,value])=>(
-            <div className='column' key={key}>
-                <div className='ab-details-title'>
+            <div className={classes.ProductDetails} key={key}>
+                <div className={classes.Title}>
                     <p>{key}</p>
                 </div>
-                <div className='ab-details-info'>
+                <div className={classes.Info}>
                     <p>{value}</p>
                 </div>
             </div>
@@ -41,12 +42,12 @@ class Product extends Component {
     renderControls(){
         const {product, addProductToBasket} = this.props
         return(
-            <div className='control-buttons'>
+            <div  className={classes.controlBtns}>
                 <Button variant='success'
                 onClick={()=>addProductToBasket(product.id)}>
                     Add to cart
                 </Button>
-                <Button variant='dark'>
+                <Button variant='dark' className={classes.BtnDark}>
                     <Link to='/'> Back to store</Link>
                 </Button>
             </div>
@@ -56,7 +57,7 @@ class Product extends Component {
     renderContent(){
         const {product} = this.props
         return(
-            <div className='thumbnail'>
+            <div>
                 <Row>
                     <Col md={6}>
                         <Image src={product.image} alt={product.name} rounded fluid/>
@@ -68,7 +69,7 @@ class Product extends Component {
                         {product && this.renderControls()}
                     </Col>
                 </Row>
-                <div className='caption-full'>
+                <div className={classes.ProductCaption}>
                     <h4>Description</h4>
                     {product && this.renderFields()}
                 </div>
@@ -80,7 +81,7 @@ class Product extends Component {
         const {product} = this.props
         return(
             <>
-                <Row>
+                <Row className={classes.Product}>
                     <Col md={12}>
                     <div>{product && this.renderContent()}</div>
                     </Col>

@@ -3,7 +3,11 @@ import * as R from 'ramda';
 export const getProductById = (state, id) => R.prop(id, state.products);
 
 export const getProducts = state =>{
-    const products = R.map(id => getProductById(state, id), state.productsPage.ids);
+    const applySearch = item => R.includes(state.productsPage.search.toLowerCase(), R.prop('name', item).toLowerCase())
+    const products = R.compose(
+        R.filter(applySearch),
+        R.map(id => getProductById(state, id))
+    )(state.productsPage.ids)
     return products;
 }
 
@@ -24,7 +28,7 @@ export const getBasketProductsWithCount = state =>{
     const uniqueIds = R.uniq(state.basket) // getting unique Ids from basket
     const productCount = id => R.compose(
        R.length, // cointing elements with the same id (how many times this product in a basket)
-        R.filter(basketId=>R.equals(id,basketId)) // filtering elements with the same id
+       R.filter(basketId=>R.equals(id,basketId)) // filtering elements with the same id
     )(state.basket)
     const productWithCount = product => R.assoc('count', productCount(product.id), product) // making a clone of an object of product, setting the specified property 'count' with the given value (function)
     const products = R.compose(
